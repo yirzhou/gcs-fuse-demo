@@ -1,18 +1,13 @@
 import os
-import random
 import sys
 
 ONE_MEBIBYTE = 1048576
 
 
 def generate_rand_file(filename, size):
-    randstr = "".join(
-        [chr(random.randint(0, 255)) for _ in range(size * ONE_MEBIBYTE)]
-    )
-    with open(filename, "a+") as f:
-        for i in range(size * ONE_MEBIBYTE):
-            f.write(str(i))
-        f.write("\n")
+
+    with open(filename, "wb") as f:
+        f.write(b"\x00" + os.urandom(size * ONE_MEBIBYTE) + b"\x00")
 
     print(f"Generated {filename} of size {os.stat(filename).st_size} bytes")
 
