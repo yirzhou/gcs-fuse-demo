@@ -9,3 +9,7 @@ _Note: this project is a work in progress._
 ```
 go run main.go
 ```
+
+## TODOs
+
+- [] Add test for validating read
