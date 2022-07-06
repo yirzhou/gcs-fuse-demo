@@ -12,4 +12,4 @@ go run main.go
 
 ## TODOs
 
-- [] Add test for validating read
+- [ ] Add test for validating read
